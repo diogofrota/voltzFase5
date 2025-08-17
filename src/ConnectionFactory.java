@@ -3,9 +3,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public final class ConnectionFactory {
-    private static final String URL  = "xxxx";
-    private static final String USER = "xxxx";
-    private static final String PASS = "xxxx";
+    private static final String URL  = "xxx";
+    private static final String USER = "xxx";
+    private static final String PASS = "xxx";
 
     private ConnectionFactory() {}
 

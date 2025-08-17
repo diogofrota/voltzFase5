@@ -1,0 +1,18 @@
+/* Consultas rápidas para validar os relacionamentos */
+-- Relação completa das aplicações
+SELECT  a.ID_APLICACAO,
+        u.NOME        AS NOME_USUARIO,
+        c.NOME        AS NOME_CRIPTO,
+        c.SIGLA,
+        a.VALORINVESTIDO 
+FROM APLICACAO a
+JOIN USUARIO u      ON u.ID_USUARIO = a.ID_USUARIO
+JOIN CRIPTOMOEDA c  ON c.ID_CRIPT   = a.ID_CRIPT
+ORDER BY a.ID_APLICACAO;
+
+-- Totais por usuário
+SELECT u.NOME, SUM(a.VALORINVESTIDO) AS TOTAL_INVESTIDO
+FROM USUARIO u
+LEFT JOIN APLICACAO a ON a.ID_USUARIO = u.ID_USUARIO
+GROUP BY u.NOME
+ORDER BY TOTAL_INVESTIDO DESC;
